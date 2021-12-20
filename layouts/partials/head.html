@@ -2,7 +2,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" href="{{ if (isset .Site.Params "favicon") }}{{ .Site.Params.favicon }}{{ else }}/favicon.ico{{ end }}">
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="73df1ace-0581-4365-9eb0-2ee4da6a89d0" data-blockingmode="auto" type="text/javascript"></script>
+
+  <link rel="icon" href="{{ if (isset .Site.Params "favicon" ) }}{{ .Site.Params.favicon }}{{ else }}/favicon.ico{{ end }}">
 
   <title>
     {{ block "title" . }} {{- .Title }} - {{ .Site.Title -}} {{ end }}
@@ -14,7 +16,7 @@
   {{- if .Params.Author }}
   <meta name="author" content="{{ .Params.Author}}" />
   {{ end -}}
-  
+
   {{ hugo.Generator }}
 
   {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
